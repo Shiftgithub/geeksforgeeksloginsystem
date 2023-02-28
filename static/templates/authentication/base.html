@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Authentication{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-4.6.2-dist/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'vendor/fontawesome-free-5.15.4-web/css/all.css' %}"/>
+</head>
+<body>
+    {% comment %} {% block navbar %}
+    {% include 'navbar.html' %} 
+    {% comment %} {% endblock %} {% endcomment %}
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'vendor/jquery-3.6.3/jquery-3.6.3.min.js' %}"></script>
+    <script src="{% static 'vendor/popper.js-1.16.1/dist/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap-4.6.2-dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/DataTables/datatables.min.js' %}"></script>
+            <script>
+                $('#dataTable').DataTable();
+            </script>
+
+    {% block scripts %}
+    {% endblock%}
+</body>
+</html>

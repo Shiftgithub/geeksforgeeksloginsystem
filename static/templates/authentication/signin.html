@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+<div class="alert alert-{{ messages.tags }} alert-dismissible fade show" role="alert">
+  <strong>message:</strong>{{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="close"></button>
+  <span aria-hidden="true">&times;</span>
+</div>
+{% endfor %}
+  <div>
+    <h3>Signin Page</h3>
+    <form action="/signin" method="POST">
+      {% csrf_token %}
+      <label for="usernameId">Username</label>
+      <input type="text" id="usernameId" name="username" placeholder="Create a user (only letters and number are allow)" />
+      <br />
+      <label for="passwordId">Password</label>
+      <input type="password" id="passwordId" name="password" placeholder="Enter your password" />
+      <br />
+      <button type="submit" class="btn btn-info">Sign in</button>
+    </form>
+  </div>
+{% endblock %}
